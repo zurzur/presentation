@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section class="present" style="top: 177.5px; display: block;">
+				<h1>How browsers work</h1>
+				<p>
+					<small>Created by <a href="http://github.com/zurzur">Maksim Kalachou</a></small>
+				</p>
+			</section>
+			<section data-background-video="https://05-lvl3-pdl.vimeocdn.com/01/3836/1/44182484/103547489.mp4?expires=1544139046&amp;token=00845b019032cbfc3fdf9"
+			 data-background-color="#000000" class="has-dark-background present" style="top: 231.5px; display: block;">
+				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+					<h2>The presentation is based on the research done by Israeli developer</h2>
+					<h1>Tali Garsiel</h1>
+					<pre><a href="https://vimeo.com/44182484">Link to the video</a></pre>
+					<pre><a href="http://taligarsiel.com/">Link to the research</a></pre>
+
+				</div>
+			</section>
+			<section class="stack future" style="top: 177.5px; display: block;">
+				<section style="top: 34px; display: block;" class="present">
+					<h2>The browsers we will talk about</h2>
+					<p>Open-source browsers</p>
+				</section>
+				<section class="future" style="top: 216px; display: block;" hidden="" aria-hidden="true">
+					<h2>Webkit based</h2>
+					<img width="550px" height="550px" alt="webkit" src="./img/webkit_logo.svg.png" data-lazy-loaded="">
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Gecko based</h2>
+					<img width="550px" height="550px" alt="gecko logo" src="./img/gecko-logo.svg.png" data-lazy-loaded="">
+				</section>
+			</section>
+			<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+				<h4>The browser's high level structure</h4>
+				<img width="550px" height="550px" alt="layers" src="./img/layers.png" data-lazy-loaded="">
+			</section>
+			<section class="stack future" style="top: 177.5px; display: block;">
+				<section style="top: 34px; display: block;" class="present">
+					<h2>Rendering engines</h2>
+				</section>
+				<section class="future" style="top: 216px; display: block;" hidden="" aria-hidden="true">
+					<h2>The main flow</h2>
+					<img width="550px" height="auto" alt="flow" src="./img/flow.png" data-lazy-loaded="">
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Main flow examples</h2>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>WebKit main flow</h2>
+					<img width="550px" height="auto" alt="gecko logo" src="./img/webkitflow.png" data-lazy-loaded="">
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Mozilla's Gecko rendering engine main flow</h2>
+					<img width="550px" height="auto" alt="gecko logo" src="./img/gecko-flow.jpg" data-lazy-loaded="">
+				</section>
+			</section>
+			<section class="stack future" style="top: 177.5px; display: block;">
+				<section style="top: 34px; display: block;" class="present">
+					<h2>HTML Parser</h2>
+				</section>
+				<section class="future" style="top: 216px; display: block;" hidden="" aria-hidden="true">
+					<h2>The HTML grammar definition</h2>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Not a context free grammar</h2>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>The parsing algorithm</h2>
+					<img width="auto" height="550px" alt="algorithm" src="./img/tockenizer.png" data-lazy-loaded="">
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h4>Tokenizing the example input</h4>
+					<img width="550px" height="auto" alt="tokenizing_input" src="./img/tokenizing_input.png" data-lazy-loaded="">
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h4>Tree construction algorithm</h4>
+					<img width="auto" height="550px" alt="tokenizing_input" src="./img/construction.gif" data-lazy-loaded="">
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Browsers' error tolerance</h2>
+					<img width="550px" height="auto" alt="tol" src="./img/tolerance.png" data-lazy-loaded="">
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>WebKit error tolerance examples</h2>
+					<ul>
+						<li class="fragment" data-fragment-index="0">&lt;/br&gt; instead of &lt;br&gt;</li>
+						<li class="fragment" data-fragment-index="1">A stray table</li>
+						<li class="fragment" data-fragment-index="2">Nested form elements</li>
+						<li class="fragment" data-fragment-index="3">A too deep tag hierarchy</li>
+						<li class="fragment" data-fragment-index="4">Misplaced html or body end tags</li>
+					</ul>
+				</section>
+			</section>
+			<section class="stack future" style="top: 177.5px; display: block;">
+				<section style="top: 34px; display: block;" class="present">
+					<h2>Render tree construction</h2>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h4>The render tree relation to the DOM tree</h4>
+					<img width="auto" height="550px" alt="algorithm" src="./img/render_tree.png" data-lazy-loaded="">
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Style computation brings up a few difficulties</h2>
+					<ul>
+						<li>Style data is a very large construct, holding the numerous style properties, this can cause memory problems.</li>
+						<li>Finding the matching rules for each element can cause performance issues if it's not optimized. </li>
+						<li>Applying the rules involves quite complex cascade rules that define the hierarchy of the rules.</li>
+					</ul>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Solvation</h2>
+
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Sharing style data by WebKit</h2>
+					<p>
+						WebKit nodes references style objects (RenderStyle). These objects can be shared by nodes in some conditions.
+					</p>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Firefox rule tree</h2>
+					<img width="auto" height="550px" alt="tol" src="./img/fire_rule_tree.png" data-lazy-loaded="">
+				</section>
+			</section>
+			<section class="stack future" style="top: 177.5px; display: block;">
+				<section class="future" style="top: 34px; display: block;" class="present">
+					<h2>Applying the rules in the correct cascade order</h2>
+				</section>
+				<section class="future" style="top: 216px; display: block;" hidden="" aria-hidden="true">
+					<h2>Style sheet cascade order</h2>
+					<h4>According to CSS spec, the cascade order is (from low to high):</h4>
+					<ol>
+						<li>Browser declarations</li>
+						<li>User normal declarations</li>
+						<li>Author normal declarations</li>
+						<li>Author important declarations</li>
+						<li>User important declarations</li>
+					</ol>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Specificity</h2>
+					<p><b>Specificity</b> is the means by which browsers decide which CSS property values are the most relevant to an
+						element and, therefore, will be applied</p>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>How is specificity calculated?</h2>
+					<h4>The following list of selector types increases by specificity:</h4>
+					<ol>
+						<li value="0">Type selectors (e.g., h1) and pseudo-elements (e.g., ::before).</li>
+						<li>Class selectors (e.g., .example), attributes selectors (e.g., [type="radio"]) and pseudo-classes (e.g.,
+							:hover).</li>
+						<li>ID selectors (e.g., #example).</li>
+					</ol>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>The <span class="hljs-string">!important</span> exception</h2>
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Useful links about specificity</h2>
+					<ul>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Description on MDN</a></li>
+						<li><a href="https://specificity.keegan.st/">Visualization tool</a></li>
+					</ul>
+				</section>
+			</section>
+			<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+				<h2>Layout</h2>
+				<img width="auto" height="550px" alt="tol" src="./img/reflow.png" data-lazy-loaded="">
+			</section>
+			<section class="future stack">
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>Painting</h2>
+
+				</section>
+				<section class="future" style="top: 71px; display: block;" hidden="" aria-hidden="true">
+					<h2>The stacking order of a block renderer is:</h2>
+					<ol>
+						<li class="fragment" data-fragment-index="0">background color</li>
+						<li class="fragment" data-fragment-index="1">background image</li>
+						<li class="fragment" data-fragment-index="2">border</li>
+						<li class="fragment" data-fragment-index="3">children</li>
+						<li class="fragment" data-fragment-index="4">outline</li>
+					</ol>
+				</section>
+			</section>
+			<section class="stack future" style="top: 0px; display: block;" data-previous-indexv="0" hidden="" aria-hidden="true">
+				<section class="future" style="top: 34px; display: block;" class="present">
+					<h2>Practical benefits</h2>
+				</section>
+				<section id="fragments" style="top: 169px; display: block;" class="" aria-hidden="true">
+					<h2>How to avoid re-layout and re-rendering</h2>
+					<ul>
+						<li class="fragment" data-fragment-index="0">Display: none</li>
+						<li class="fragment" data-fragment-index="1">Change class instead of attributes</li>
+						<li class="fragment" data-fragment-index="2">Lower hierarchy - lighter changes</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
